@@ -1,3 +1,5 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
 * {
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
@@ -7,4 +9,23 @@ h1 {
 	font-size: 300px;
 	text-align: center;
 	color: fuchsia;
+}
+
+#app-container {
+	border: solid 1px #bbb;
+}
+
+.container {
+	background-color: #a39c9c;
+}
+
+.myBtn {
+	width: 30%;
+	background-color: #c1bcbc;
+	border: black solid 1px;
+}
+
+.removeBtn {
+	background-color: #ff7373;
+
 }

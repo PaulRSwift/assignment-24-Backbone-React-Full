@@ -10,13 +10,13 @@ apiRouter
 /*
  * NOTE: the route should have a name that matches the name of the data-table
  */
- .get('/resources', function(req, res){
+ .get('/todo', function(req, res){
    Resource.find(req.query , function(err, results){
      if(err) return res.json(err)
      res.json(results)
    })
  })
- .post('/resources', function(req, res){
+ .post('/todo', function(req, res){
      let newRecord = new Resource(req.body)
 
      newRecord.save(function(err, record){
@@ -29,14 +29,14 @@ apiRouter
 
 
 apiRouter
- .get('/resources/:_id', function(req, res){
+ .get('/todo/:_id', function(req, res){
    Resource.findById(req.params._id, "-password", function(err, record){
      if(err || !record ) return res.json(err)
      res.json(record)
    })
  })
 
- .put('/resources/:_id', function(req, res){
+ .put('/todo/:_id', function(req, res){
 
    Resource.findByIdAndUpdate(req.params._id, req.body, function(err, record){
        if (err) {
@@ -51,7 +51,7 @@ apiRouter
    })
  })
 
- .delete('/resources/:_id', function(req, res){
+ .delete('/todo/:_id', function(req, res){
    Resource.remove({ _id: req.params._id}, (err) => {
      if(err) return res.json(err)
      res.json({
@@ -62,7 +62,7 @@ apiRouter
  })
 
  // TO DELETE ALL:
- // .delete("/resources/all/records", function(req, res){
+ // .delete("/todo/all/records", function(req, res){
  //   Resource.remove({}, (err) => {
  //     if(err) return res.json(err)
  //     res.json({
